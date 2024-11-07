@@ -3,6 +3,8 @@
     <div class="container mx-auto p-4">
         <div class="flex flex-col md:w-full">
 
+            <h1 class="text-4xl text-center mb-6 font-bold mt-24">Items in Inventory</h1>
+
             <!-- Session Flash Messages -->
             @if (session('status'))
                 <div class="text-white font-semibold mb-6 bg-green-600 rounded-md w-full px-6 py-2">
@@ -23,9 +25,9 @@
             @endif
 
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <div class="bg-gray-200 p-4 flex justify-between items-center">
-                    <h1 class="text-3xl font-bold text-gray-800">Items</h1>
-                    <a href="{{ url('items/create') }}" class="bg-slate-600 text-white px-4 py-2 rounded-md hover:bg-slate-700 transition duration-300">
+                <div class="bg-slate-700 p-4 flex justify-between items-center">
+                    <h1 class="text-3xl font-bold  text-white">Items</h1>
+                    <a href="{{ url('items/create') }}" class="bg-slate-300 text-black px-4 py-2 rounded-md hover:bg-slate-200 transition duration-300">
                         Add Item
                     </a>
                 </div>
@@ -33,7 +35,7 @@
                 <div class="card-body">
                     <div class="overflow-x-auto">
                         <table class="min-w-full bg-slate-100">
-                            <thead class="bg-gray-200 text-slate-800 uppercase text-sm leading-normal">
+                            <thead class="bg-gray-300 text-slate-800 uppercase text-sm leading-normal">
                                 <tr>
                                     <th class="py-3 px-6 text-right  hover:text-slate-400">
                                         <a href="{{ route('items.index', ['sortBy' => 'id', 'sortOrder' => $sortBy == 'id' && $sortOrder == 'asc' ? 'desc' : 'asc']) }} ">
@@ -76,13 +78,13 @@
                             <tbody class="text-gray-700 text-sm font-light">
                                 @foreach ($items as $item)
                                     <tr class="border-b border-slate-200 hover:bg-gray-100">
-                                        <td class="py-3 px-6 text-right whitespace-nowrap">{{ $item->id }}</td>
-                                        <td class="py-3 px-6 text-right text-md">{{ $item->name }}</td>
-                                        <td class="py-3 px-6 text-right text-md">{{ $item->description }}</td>
-                                        <td class="py-3 px-6 text-right text-md">{{ $item->quantity }}</td>
-                                        <td class="py-3 px-6 text-right text-md">{{ $item->price }}</td>
-                                        <td class="py-3 px-6 text-right text-md">{{ $item->created_at }}</td>
-                                        <td class="py-3 px-6 text-right text-md">{{ $item->updated_at }}</td>
+                                        <td class="py-3 px-6 text-right whitespace-nowrap font-semibold">{{ $item->id }}</td>
+                                        <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->name }}</td>
+                                        <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->description }}</td>
+                                        <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->quantity }}</td>
+                                        <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->price }}</td>
+                                        <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->created_at }}</td>
+                                        <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->updated_at }}</td>
                                         <td class="flex flex-row items-center justify-center">
                                             <a href="{{ route('items.edit', $item->id) }}" class="text-slate-600 hover:text-slate-800 ml-6 text-lg">
                                                 <i class="fas fa-edit"></i>

@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="text-4xl text-center py-6 font-semibold">Register a new account</h1>
+    <h1 class="text-3xl text-center mb-4 font-semibold mt-24">Register a new account</h1>
 
     <div class="mx-auto max-w-screen-sm">
 

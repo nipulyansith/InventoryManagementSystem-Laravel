@@ -1,8 +1,8 @@
 <x-layout>
 
-    <h1 class="text-3xl font-bold text-gray-800 text-center">Add item to the inventory</h1>
+    <h1 class="text-3xl font-bold text-gray-800 text-center mt-24 pt-4">Add item to the inventory</h1>
 
-    <div class="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-md">
+    <div class="max-w-lg mx-auto mt-4 p-6 bg-white shadow-md rounded-md">
 
         
         <form action="{{ route('items.store') }}" method="POST" class="space-y-6">

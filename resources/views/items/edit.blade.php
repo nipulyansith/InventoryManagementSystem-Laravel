@@ -1,8 +1,8 @@
 <x-layout>
 
-    <h1 class="text-3xl font-bold text-gray-800 text-center">Edit item</h1>
+    <h1 class="text-4xl font-bold text-gray-800 text-center mt-24 pt-6">Edit item</h1>
 
-    <div class="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-md">
+    <div class="max-w-lg mx-auto mt-6 p-6 bg-white shadow-md rounded-md">
 
         
         <form action="{{ route('items.update', $item->id) }}" method="POST" class="space-y-6">

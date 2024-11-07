@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="text-4xl text-center py-6 font-semibold">Login to your Account</h1>
+    <h1 class="text-4xl text-center py-6 font-semibold mt-24">Login to your Account</h1>
 
     <div class="mx-auto max-w-screen-sm">
 
