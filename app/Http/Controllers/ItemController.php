@@ -12,7 +12,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = item::paginate(10);
+        $items = item::paginate(2);
         return view('items.index', [
             'items' => $items
         ]);
@@ -98,6 +98,7 @@ class ItemController extends Controller
      */
     public function destroy(item $item)
     {
-        //
+        $item->delete();
+        return redirect('items')->with('delete_status', 'Item deleted successfully');
     }
 }

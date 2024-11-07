@@ -10,6 +10,14 @@
 
                 @endsession
 
+                
+            @session('delete_status')
+            <div class="text-white font-semibold mb-6 bg-red-600 rounded-md w-full px-6 py-2">
+                <i class="fas fa-check"></i> {{session('delete_status')}}
+            </div>
+
+            @endsession
+
                 @session('message')
                 <div class="text-white font-semibold mb-6 bg-green-600 rounded-md w-full px-6 py-2">
                     <i class="fas fa-check"></i> {{session('message')}}
@@ -52,13 +60,18 @@
                                     <td class="py-3 px-6 text-right text-md">{{$item->price}}</td>
                                     <td class="py-3 px-6 text-right text-md">{{$item->created_at}}</td>
                                     <td class="py-3 px-6 text-right text-md">{{$item->updated_at}}</td>
-                                    <td>
+                                    <td class="flex flex-row">
                                         <a href="{{route('items.edit' , $item->id)}}" class="text-slate-600 hover:text-slate-800 ml-6  text-lg">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     
-                                        <a href="" class="text-red-500 hover:text-red-600 ml-5 text-lg">
-                                            <i class="fas fa-trash"></i>
+                                        <form action="{{route('items.destroy' , $item->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                                <button type="submit" class="text-red-500 hover:text-red-600 ml-5 text-lg">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                        </form>
                                     </td>
                                     
                                     
@@ -68,6 +81,8 @@
                                 <!-- Add more rows as needed -->
                             </tbody>
                         </table>
+
+                        {{$items->links()}}
                     </div>
                 </div>
                 
