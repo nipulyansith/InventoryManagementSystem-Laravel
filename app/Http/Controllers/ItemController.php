@@ -10,13 +10,21 @@ class ItemController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $items = item::paginate(5);
-        return view('items.index', [
-            'items' => $items
-        ]);
-    }
+    public function index(Request $request)
+{
+    // Get the sorting column and sorting order from the request, defaulting to 'id' and 'asc'
+    $sortBy = $request->get('sortBy', 'id');
+    $sortOrder = $request->get('sortOrder', 'asc');
+
+    // Fetch the items and sort them according to the specified column and order
+    $items = Item::orderBy($sortBy, $sortOrder)->paginate(5);
+
+    return view('items.index', [
+        'items' => $items,
+        'sortBy' => $sortBy,
+        'sortOrder' => $sortOrder
+    ]);
+}
 
     /**
      * Show the form for creating a new resource.
