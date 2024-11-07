@@ -3,31 +3,46 @@
     <h1 class="text-3xl font-bold text-gray-800 text-center">Add item to the inventory</h1>
 
     <div class="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-md">
+
+        
         <form action="{{ route('items.store') }}" method="POST" class="space-y-6">
-            @csrf <!-- CSRF protection -->
+            @csrf 
 
             <!-- Name (String, item name) -->
             <div class="mb-3">
                 <label for="name" class="block text-sm font-medium text-gray-700">Item Name</label>
-                <input type="text" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="name" name="name" required>
+                <input type="text" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="name" name="name">
+                @error('name')
+                    <p class="text-red-500 text-sm ">{{ $message }}</p>
+                @enderror
+            
             </div>
 
             <!-- Description (Text, optional) -->
             <div class="mb-3">
                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                 <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="description" name="description" rows="3"></textarea>
+                @error('description')
+                <p class="text-red-500 text-sm ">{{ $message }}</p>
+            @enderror
             </div>
 
             <!-- Quantity (Integer, number of items in stock) -->
             <div class="mb-3">
                 <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
-                <input type="number" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="quantity" name="quantity" required>
+                <input type="number" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="quantity" name="quantity">
+                @error('quantity')
+                <p class="text-red-500 text-sm ">{{ $message }}</p>
+            @enderror
             </div>
 
             <!-- Price (Decimal, item price) -->
             <div class="mb-3">
                 <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-                <input type="number" step="0.01" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-slate-500 focus:border-slate-500 sm:text-sm" id="price" name="price" required>
+                <input type="number" step="0.01" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-slate-500 focus:border-slate-500 sm:text-sm" id="price" name="price">
+                @error('price')
+                <p class="text-red-500 text-sm ">{{ $message }}</p>
+            @enderror
             </div>
 
             <!-- Submit Button -->

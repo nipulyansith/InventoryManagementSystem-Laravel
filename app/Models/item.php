@@ -3,17 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class item extends Model
 {
     use HasFactory;
 
-    protected $table = 'categories';
+    protected $table = 'items';
 
     protected $fillable = [
         'name',
         'description', // Even though it's nullable, include it here if you want it mass assignable
         'quantity',
-        'price'
+        'price',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

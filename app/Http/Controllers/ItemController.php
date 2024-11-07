@@ -12,7 +12,10 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('items.index');
+        $items = item::paginate(10);
+        return view('items.index', [
+            'items' => $items
+        ]);
     }
 
     /**
@@ -20,6 +23,7 @@ class ItemController extends Controller
      */
     public function create()
     {
+
         return view('items.create');
     }
 
@@ -28,7 +32,24 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable',
+            'quantity' => 'required|integer|min:1', 
+            'price' => 'required|numeric|min:1'   
+        ]);
+
+        item::create(
+            [
+                'name' => $request->name,
+                'description' => $request->description,
+                'quantity' => $request->quantity,
+                'price' => $request->price,
+                'user_id' => auth()->id(), 
+            ]
+        ); 
+
+        return redirect('items')->with('message', 'Item created successfully');
     }
 
     /**
@@ -44,7 +65,7 @@ class ItemController extends Controller
      */
     public function edit(item $item)
     {
-        return view('items.edit');
+        return view('items.edit', compact('item'));
     }
 
     /**
@@ -52,7 +73,24 @@ class ItemController extends Controller
      */
     public function update(Request $request, item $item)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable',
+            'quantity' => 'required|integer|min:1', 
+            'price' => 'required|numeric|min:1'   
+        ]);
+
+        $item->update(
+            [
+                'name' => $request->name,
+                'description' => $request->description,
+                'quantity' => $request->quantity,
+                'price' => $request->price,
+                'user_id' => auth()->id(), 
+            ]
+        ); 
+
+        return redirect('items')->with('status', 'Item updated successfully');
     }
 
     /**
