@@ -16,19 +16,22 @@
             </div>
         </div>
     
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Track Inventory</h3>
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl ">
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+                <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Track Inventory</h3>
                 <p class="text-gray-600">Easily track your items and avoid overstocking or shortages.</p>
             </div>
     
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Add New Items</h3>
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+                <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Add New Items</h3>
                 <p class="text-gray-600">Quickly add new items to your inventory with our simple form.</p>
             </div>
     
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Edit or Delete Items</h3>
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+                <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Edit or Delete Items</h3>
                 <p class="text-gray-600">Easily edit item details or remove items from your inventory.</p>
             </div>
         </div>
@@ -45,23 +48,26 @@
             </p>
             
             <!-- Replacing Login/Register buttons with an image -->
-            <img src="{{ asset('images/inventory.png') }}" alt="Inventory Management" class="w-64 h-auto mb-2">
+            <img src="{{ asset('images/inventory.png') }}" alt="Inventory Management" class="w-64 h-auto">
         </div>
         
         
         <div class="mt-2 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Manage Inventory</h3>
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+                <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Manage Inventory</h3>
                 <p class="text-gray-600">Login to add, update, and manage your stock efficiently.</p>
             </div>
     
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Track Stock Levels</h3>
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+                <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Track Stock Levels</h3>
                 <p class="text-gray-600">Keep your inventory up-to-date and prevent stock issues.</p>
             </div>
     
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Organize Items</h3>
+            <div class="bg-white p-6 rounded-lg shadow-md relative">
+                <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Organize Items</h3>
                 <p class="text-gray-600">Organize your inventory by adding, editing, or removing items.</p>
             </div>
         </div>

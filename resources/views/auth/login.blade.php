@@ -3,12 +3,12 @@
 
     <div class="mx-auto max-w-screen-sm">
 
-        <form action="{{route('login')}}" method="post" class="flex flex-col justify-center max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
-
+        <form action="{{route('login')}}" method="post" class="flex flex-col justify-center max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg relative">
+            <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div> 
             @csrf
         
             {{-- Email --}}
-            <div class="mb-6">
+            <div class="mb-6 mt-3">
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
                 <input type="text" name="email" id="email" 
                 value="{{old('email')}}"

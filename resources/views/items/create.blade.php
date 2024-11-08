@@ -2,10 +2,11 @@
 
     <h1 class="text-3xl font-bold text-gray-800 text-center mt-24 pt-4">Add item to the inventory</h1>
 
-    <div class="max-w-lg mx-auto mt-4 p-6 bg-white shadow-md rounded-md">
-
+    <div class="max-w-lg mx-auto mt-4 p-6 bg-white shadow-md rounded-md relative">
+        <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
         
-        <form action="{{ route('items.store') }}" method="POST" class="space-y-6">
+        <form action="{{ route('items.store') }}" method="POST" class="space-y-6 ">
+            
             @csrf 
 
             <!-- Name (String, item name) -->

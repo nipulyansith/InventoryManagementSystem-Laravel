@@ -16,13 +16,21 @@ class ItemController extends Controller
     $sortBy = $request->get('sortBy', 'id');
     $sortOrder = $request->get('sortOrder', 'asc');
 
+    $search = $request->get('search');
+
     // Fetch the items and sort them according to the specified column and order
-    $items = Item::orderBy($sortBy, $sortOrder)->paginate(5);
+    $items = Item::when($search, function ($query, $search) {
+        return $query->where('name', 'LIKE', "%{$search}%")
+                     ->orWhere('description', 'LIKE', "%{$search}%");
+    })
+    ->orderBy($sortBy, $sortOrder)
+    ->paginate(5);
 
     return view('items.index', [
         'items' => $items,
         'sortBy' => $sortBy,
-        'sortOrder' => $sortOrder
+        'sortOrder' => $sortOrder,
+        'search' => $search
     ]);
 }
 

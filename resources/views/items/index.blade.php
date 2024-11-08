@@ -3,7 +3,7 @@
     <div class="container mx-auto p-4">
         <div class="flex flex-col md:w-full">
 
-            <h1 class="text-4xl text-center mb-6 font-bold mt-24">Items in Inventory</h1>
+            <h1 class="text-2xl text-left mb-6 font-bold mt-24">Items in Inventory</h1>
 
             <!-- Session Flash Messages -->
             @if (session('status'))
@@ -26,10 +26,28 @@
 
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
                 <div class="bg-slate-700 p-4 flex justify-between items-center">
-                    <h1 class="text-3xl font-bold  text-white">Items</h1>
+                    <div class=" w-[360px]">
+                        <h1 class="text-3xl font-bold  text-white">Items</h1>
+
+                        <form action="{{ route('items.index') }}" method="GET" class="mb-3 mt-3">
+                            <div class="flex items-center">
+                                <input type="text" name="search" value="{{ request('search') }}" 
+                                       placeholder="Search by name or description..." 
+                                       class="px-4 py-2 border rounded-md w-full text-sm" />
+                                <button type="submit" class="ml-2 bg-slate-300 text-black px-4 py-2 rounded-md hover:bg-slate-200 transition duration-300 text-sm">
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+
+                    <div class="mt-7">
+                        
                     <a href="{{ url('items/create') }}" class="bg-slate-300 text-black px-4 py-2 rounded-md hover:bg-slate-200 transition duration-300">
                         Add Item
                     </a>
+                </div>
                 </div>
 
                 <div class="card-body">
@@ -85,14 +103,14 @@
                                         <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->price }}</td>
                                         <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->created_at }}</td>
                                         <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->updated_at }}</td>
-                                        <td class="flex flex-row items-center justify-center">
-                                            <a href="{{ route('items.edit', $item->id) }}" class="text-slate-600 hover:text-slate-800 ml-6 text-lg">
+                                        <td class="flex flex-row items-center justify-center pt-2.5">
+                                            <a href="{{ route('items.edit', $item->id) }}" class="text-slate-600 hover:text-slate-800 ml-8 text-xl">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <form action="{{ route('items.destroy', $item->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="text-red-500 hover:text-red-600 ml-5 mr-5 text-lg">
+                                                <button type="submit" class="text-red-500 hover:text-red-600 ml-8 mr-8 text-xl">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
                                             </form>

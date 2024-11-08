@@ -1,10 +1,12 @@
 <x-layout>
-    <h1 class="text-3xl text-center mb-4 font-semibold mt-24">Register a new account</h1>
+    <h1 class="text-4xl text-center mb-4 font-semibold mt-24">Register a new account</h1>
 
     <div class="mx-auto max-w-screen-sm">
-
-        <form action="{{route('register')}}" method="post" class="flex flex-col justify-center max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
-
+        <form action="{{route('register')}}" method="post" class="flex flex-col justify-center max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg relative">
+    
+            <!-- Blue Stripe Inside Form -->
+            <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
+    
             @csrf
             {{-- Username --}}
             <div class="mb-6 mt-8">
@@ -55,8 +57,8 @@
             <button class="py-3 px-6 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-500 transition duration-300">Register</button>
         
         </form>
-        
-
     </div>
+    
+    
 
 </x-layout>

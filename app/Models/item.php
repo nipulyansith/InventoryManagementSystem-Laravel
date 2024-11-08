@@ -23,4 +23,15 @@ class item extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // Define the relationship with Supplier
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class);
+    }
 }
