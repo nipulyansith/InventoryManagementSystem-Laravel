@@ -3,7 +3,7 @@
     <div class="container mx-auto p-4">
         <div class="flex flex-col md:w-full">
 
-            <h1 class="text-2xl text-left mb-6 font-bold mt-24">Items in Inventory</h1>
+            <h1 class="text-2xl text-left mb-3 font-bold mt-24">{{auth()->user()->name}}'s Inventory</h1>
 
             <!-- Session Flash Messages -->
             @if (session('status'))
@@ -104,6 +104,9 @@
                                         <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->created_at }}</td>
                                         <td class="py-3 px-6 text-right text-md font-semibold">{{ $item->updated_at }}</td>
                                         <td class="flex flex-row items-center justify-center pt-2.5">
+                                            <a href="{{ route('items.show', $item->id) }}" class="text-slate-600 hover:text-slate-800 ml-8 text-xl">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </a>
                                             <a href="{{ route('items.edit', $item->id) }}" class="text-slate-600 hover:text-slate-800 ml-8 text-xl">
                                                 <i class="fas fa-edit"></i>
                                             </a>

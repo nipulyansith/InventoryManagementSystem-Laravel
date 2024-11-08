@@ -20,18 +20,22 @@
             <div class="bg-white p-6 rounded-lg shadow-md relative">
                 <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
                 <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Track Inventory</h3>
+                <img src="{{ asset('images/inv2.png') }}" alt="Inventory Management" class="w-64 h-auto mb-8">
+                
                 <p class="text-gray-600">Easily track your items and avoid overstocking or shortages.</p>
             </div>
     
             <div class="bg-white p-6 rounded-lg shadow-md relative">
-                <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
+                <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg "></div>
                 <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Add New Items</h3>
+                <img src="{{ asset('images/form.png') }}" alt="Inventory Management" class="w-24 h-auto mb-6 mx-auto">
                 <p class="text-gray-600">Quickly add new items to your inventory with our simple form.</p>
             </div>
     
             <div class="bg-white p-6 rounded-lg shadow-md relative">
                 <div class="absolute top-0 left-0 w-full h-3 bg-slate-700 rounded-t-lg"></div>
                 <h3 class="text-xl font-semibold text-gray-800 mb-4 mt-4">Edit or Delete Items</h3>
+                <img src="{{ asset('images/inv.png') }}" alt="Inventory Management" class="w-64 h-auto mb-11">
                 <p class="text-gray-600">Easily edit item details or remove items from your inventory.</p>
             </div>
         </div>

@@ -19,7 +19,7 @@ class ItemController extends Controller
     $search = $request->get('search');
 
     // Fetch the items and sort them according to the specified column and order
-    $items = Item::when($search, function ($query, $search) {
+    $items = Item::where('user_id', auth()->id())->when($search, function ($query, $search) {
         return $query->where('name', 'LIKE', "%{$search}%")
                      ->orWhere('description', 'LIKE', "%{$search}%");
     })
@@ -73,7 +73,7 @@ class ItemController extends Controller
      */
     public function show(item $item)
     {
-        return view('items.show');
+        return view('items.show', compact('item'));
     }
 
     /**

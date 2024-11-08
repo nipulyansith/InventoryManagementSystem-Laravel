@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .pagination .page-item.active .page-link {
-    background-color: #787878;
+    background-color: rgb(51 65 85 / var(--tw-bg-opacity)) /* #334155 */;;
     border-color: #787878;
     color: white;
 }
