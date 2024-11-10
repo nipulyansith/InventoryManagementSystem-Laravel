@@ -31,6 +31,7 @@
 
         <!-- Back to List Button -->
         <div class="mt-4">
+            <p class="mb-2 font-semibold">Added by: {{ $user->name }}</p>
             <a href="{{ route('items.index') }}" class="w-full block bg-slate-600 text-white py-2 px-4 rounded-md shadow hover:bg-slate-700 text-center focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 ">
                 Back to Item List
             </a>
@@ -38,9 +39,10 @@
     </div>
 
     <!-- Optional: Display created_at and updated_at -->
-    <div class="max-w-lg mx-auto mt-6 text-center">
+    <div class="max-w-lg mx-auto mt-3 text-center">
         <p class="text-sm text-gray-500">Created At: {{ $item->created_at->format('d M Y') }}</p>
         <p class="text-sm text-gray-500">Updated At: {{ $item->updated_at->format('d M Y') }}</p>
+        
     </div>
 
 </x-layout>

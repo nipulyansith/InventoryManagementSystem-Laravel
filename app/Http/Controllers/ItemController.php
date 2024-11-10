@@ -19,7 +19,7 @@ class ItemController extends Controller
     $search = $request->get('search');
 
     // Fetch the items and sort them according to the specified column and order
-    $items = Item::where('user_id', auth()->id())->when($search, function ($query, $search) {
+    $items = Item::when($search, function ($query, $search) {
         return $query->where('name', 'LIKE', "%{$search}%")
                      ->orWhere('description', 'LIKE', "%{$search}%");
     })
@@ -73,7 +73,8 @@ class ItemController extends Controller
      */
     public function show(item $item)
     {
-        return view('items.show', compact('item'));
+        $user = $item->user;
+        return view('items.show', compact('item', 'user'));
     }
 
     /**
@@ -82,6 +83,9 @@ class ItemController extends Controller
     public function edit(item $item)
     {
         return view('items.edit', compact('item'));
+
+    // Variable passed: The compact('item') function looks for the variable $item within the current scope.
+    // Creates an array: It then creates an array like this: ['item' => $item].
     }
 
     /**

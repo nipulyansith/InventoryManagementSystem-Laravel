@@ -36,6 +36,8 @@
 
                         <a href={{route('items.index')}} class="block hover:bg-slate-100 pl-4 pr-8 py-2 mb-2 mt-2">Inventory</a>
 
+                        <a href={{route('categories.index')}} class="block hover:bg-slate-100 pl-4 pr-8 py-2 mb-2 mt-2">Categories</a>
+
                         <form action="{{route('logout')}}" method="POST">
                             @csrf
                             <button type="submit" class="block hover:bg-slate-100 pl-4 pr-8 py-2 text-red-500 mb-2">Logout</button>

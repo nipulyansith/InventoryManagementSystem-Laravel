@@ -3,7 +3,7 @@
     <div class="container mx-auto p-4">
         <div class="flex flex-col md:w-full">
 
-            <h1 class="text-2xl text-left mb-3 font-bold mt-24">{{auth()->user()->name}}'s Inventory</h1>
+            <h1 class="text-2xl text-left mb-3 font-bold mt-24">Inventory</h1>
 
             <!-- Session Flash Messages -->
             @if (session('status'))
@@ -27,7 +27,7 @@
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
                 <div class="bg-slate-700 p-4 flex justify-between items-center">
                     <div class=" w-[360px]">
-                        <h1 class="text-3xl font-bold  text-white">Items</h1>
+                        
 
                         <form action="{{ route('items.index') }}" method="GET" class="mb-3 mt-3">
                             <div class="flex items-center">
@@ -42,7 +42,7 @@
                     </div>
                     
 
-                    <div class="mt-7">
+                    <div class="">
                         
                     <a href="{{ url('items/create') }}" class="bg-slate-300 text-black px-4 py-2 rounded-md hover:bg-slate-200 transition duration-300">
                         Add Item
